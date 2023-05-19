@@ -2,7 +2,7 @@
 
 這是一套簡易的序號儲值系統；可供其他開發人員應用串接(提供了API) ，可廣泛應用於(替)應用程式並加上付費機制等會員系統，但始終還是無法媲美外面的商店系統機制:( ，這只是因剛好閒暇時而作出來的。
 
-![]([https://hackmd.io/_uploads/H1_WiUVB3.gif](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_e2b5c367e2be942947820357ae91d97e.gif?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1684462669&Signature=X9kvmgvXfDkQRxX%2BYx59KOuNqvA%3D))
+![image](https://i.ibb.co/mFM8KKz/images.gif)
 
 ## 更新
 
