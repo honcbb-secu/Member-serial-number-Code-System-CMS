@@ -38,7 +38,9 @@ MySQL
 
 3.將"**API**"目錄中的api.php 該行程式碼(**define('SECRET_KEY', 'Your Secret Key');**) 替換你想為自己的api jwt 設置的密鑰（也可直接透過public目錄中有一個名為"**jwtkey.php**" 產生，請避免將此Key 洩漏給其他人
 
-4.　↑ 以上完成（大功告成）。
+4.將目錄底下的"**data.sql**"導入資料庫
+
+5.　↑ 以上完成（大功告成）。
 
 ## API 調用
 ### 1. 登入
