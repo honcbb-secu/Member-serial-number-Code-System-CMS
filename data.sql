@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-05-19 02:57:49
+-- 產生時間： 2023-05-26 09:47:14
 -- 伺服器版本： 10.4.16-MariaDB
 -- PHP 版本： 7.4.12
 
@@ -24,21 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `codes`
---
-
-CREATE TABLE `codes` (
-  `id` int(11) NOT NULL,
-  `code` varchar(255) NOT NULL,
-  `duration` int(11) NOT NULL,
-  `used_by` varchar(255) DEFAULT NULL,
-  `is_active` tinyint(1) DEFAULT 1,
-  `used_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- 資料表結構 `users`
 --
 
@@ -48,26 +33,20 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `is_admin` tinyint(1) DEFAULT 0,
   `expiration_date` datetime DEFAULT NULL,
-  `is_active` tinyint(1) DEFAULT 1
+  `is_active` tinyint(1) DEFAULT 1,
+  `otp_secret` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- 傾印資料表的資料 `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `is_admin`, `expiration_date`, `is_active`) VALUES
-(1, 'admin', '$2y$10$wKdriWwU3adI3UZ/R5HoXO.g9RpbsgN7KaFhpi9Zao.kRunjln7eC', 1, NULL, 1);
+INSERT INTO `users` (`id`, `username`, `password`, `is_admin`, `expiration_date`, `is_active`, `otp_secret`) VALUES
+(1, 'admin', '$2y$10$5NpB9oDa3PCe8PbbzyB9uODxjX9fkiCNyH8hv0z/ABM0rcSKOmE2q', 1, NULL, 1, '');
 
 --
 -- 已傾印資料表的索引
 --
-
---
--- 資料表索引 `codes`
---
-ALTER TABLE `codes`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `code` (`code`);
 
 --
 -- 資料表索引 `users`
@@ -79,12 +58,6 @@ ALTER TABLE `users`
 --
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `codes`
---
-ALTER TABLE `codes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `users`
