@@ -1,5 +1,8 @@
 <?php
 require 'database.php';
+require 'api/vendor/autoload.php';
+$ga = new PHPGangsta_GoogleAuthenticator();
+
 session_start();
 
 if (!isset($_SESSION['username'])) {
@@ -11,6 +14,25 @@ if (!isset($_SESSION['is_admin']) || !$_SESSION['is_admin']) {
     //die("權限不足");, ,以防直接太明顯被知道（安全資訊洩漏問題）
 	header('HTTP/1.1 404 Not Found');
 	exit();
+}
+
+// 驗證管理員的二階段驗證
+$stmt = $pdo->prepare("SELECT otp_secret FROM users WHERE username = ?");
+$stmt->execute([$_SESSION['username']]);
+$user = $stmt->fetch();
+
+if (!$user['otp_secret']) {
+    // 如果還沒有設置OTP，則重定向到OTP設置頁面
+    $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
+    header("Location: otp_setup.php");
+    exit();
+}
+
+// 如果已經設置了OTP，但還未驗證
+if (!isset($_SESSION['otp_verified']) || !$_SESSION['otp_verified']) {
+    $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
+    header("Location: otp_check.php");
+    exit();
 }
 
 $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
