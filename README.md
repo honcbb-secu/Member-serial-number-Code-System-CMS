@@ -38,7 +38,9 @@ MySQL
 
 3.將"**API**"目錄中的api.php 該行程式碼(**define('SECRET_KEY', 'Your Secret Key');**) 替換你想為自己的api jwt 設置的密鑰（也可直接透過public目錄中有一個名為"**jwtkey.php**" 產生，請避免將此Key 洩漏給其他人
 
-4.　↑ 以上完成（大功告成）。
+4.將目錄底下的"**data.sql**"導入資料庫
+
+5.　↑ 以上完成（大功告成）。
 
 ## API 調用
 ### 1. 登入
@@ -81,7 +83,7 @@ MySQL
 * Failed   Response: 如果 JWT token 缺失或無效，返回 401 Unauthorized。如果沒有足夠的權限，返回 403 Forbidden。如果序號無效或已被使用，返回 400 Bad Request。
   
  ### 4. 獲取用戶狀態
-* URL: /api/user/{username}/status (http://exmaple.com/api/api/user/{username}/status)
+* URL: /api/user/{username}/status (http://exmaple.com/api/user/{username}/status)
 * Method： GET
 * Headers： Content-Type: application/json
 * Susccess Response: 返回使用者的狀態，即 active 或 inactive。200 OK

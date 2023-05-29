@@ -117,7 +117,7 @@ if ($reg_error) {
 ?>
 </br>
 </br></br>
-<div class="g-recaptcha" style="transform: scale(0.9); -webkit-transform: scale(0.9); transform-origin: 0 0; -webkit-transform-origin: 0 0;" data-theme="light"  data-sitekey="6LdIeBImAAAAAOC0-oFpthyzpKiwdU7rQhToEDBD"></div></br></br>
+<div class="g-recaptcha" style="transform: scale(0.9); -webkit-transform: scale(0.9); transform-origin: 0 0; -webkit-transform-origin: 0 0;" data-theme="light"  data-sitekey="your_site_key"></div></br></br>
 <div class="container-login100-form-btn">
 <button type="submit" value="註冊" class="login100-form-btn">
 註冊
