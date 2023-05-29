@@ -106,6 +106,17 @@
                 0 => '1.0',
             ),
         ),
+        'phpgangsta/googleauthenticator' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '505c2af8337b559b33557f37cda38e5f843f3768',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpgangsta/googleauthenticator',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
+        ),
         'psr/container' => array(
             'pretty_version' => '1.1.2',
             'version' => '1.1.2.0',
